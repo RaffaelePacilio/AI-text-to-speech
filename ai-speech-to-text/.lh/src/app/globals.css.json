@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/globals.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1732786333858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1732786333858,
+            "name": "Commit-0",
+            "content": ":root {\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n\nhtml,\nbody {\n  max-width: 100vw;\n  overflow-x: hidden;\n  margin: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  place-items: center;\n  min-width: 320px;\n  min-height: 100vh;\n}\n\nbody {\n  color: var(--foreground);\n  background: var(--background);\n  font-family: Arial, Helvetica, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n}\n\na {\n  color: inherit;\n  text-decoration: none;\n}\n\n@media (prefers-color-scheme: dark) {\n  html {\n    color-scheme: dark;\n  }\n}\n\nbutton {\n  border-radius: 8px;\n  border: 1px solid transparent;\n  box-shadow: #242424;\n  padding: 0.6em 1.2em;\n  font-size: 1em;\n  font-weight: 500;\n  font-family: inherit;\n  background-color: #1a1a1a;\n  cursor: pointer;\n  transition: border-color 0.25s;\n  margin-top: 30px;\n}\nbutton:hover {\n  border-color: #646cff;\n}\nbutton:focus,\nbutton:focus-visible {\n  outline: 4px auto -webkit-focus-ring-color;\n}\n\n.text-area{\n  display: flex;\n  width: 60vw;\n  height: 60wh;\n  background-color: #646cff;\n  align-items: center;\n  justify-content: center;\n}\n"
+        }
+    ]
+}

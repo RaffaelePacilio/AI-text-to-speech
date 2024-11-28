@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/page.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1732786303456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1732786303456,
+            "name": "Commit-0",
+            "content": "'use client'\nimport { redirect } from 'next/navigation'\n\nexport default function Home() {\n\n  return (\n    <div>\n      <h1>Benvenuto nell'applicazione di riconoscimento vocale!</h1>\n      <button onClick={() => redirect('/form')}> entra nell'app !</button>\n    </div>\n  );\n}"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/app/api/route.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1732786658909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1732786904313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n const openai = new OpenAI({\n   apiKey: process.env.OPENAI_API_KEY, // Usa la chiave API di OpenAI dal file .env\n });\n \n+console.log(process.env.OPENAI_API_KEY)\n async function fetchGPTResponse(prompt: string): Promise<string> {\n   try {\n     // Invia la richiesta al modello GPT-4\n     const completion = await openai.chat.completions.create({\n"
+                }
+            ],
+            "date": 1732786658909,
+            "name": "Commit-0",
+            "content": "import { NextResponse } from 'next/server';\nimport OpenAI from 'openai';\n\n// Inizializzazione dell'API di OpenAI\nconst openai = new OpenAI({\n  apiKey: process.env.OPENAI_API_KEY, // Usa la chiave API di OpenAI dal file .env\n});\n\nasync function fetchGPTResponse(prompt: string): Promise<string> {\n  try {\n    // Invia la richiesta al modello GPT-4\n    const completion = await openai.chat.completions.create({\n      model: 'gpt-4',  // Usa il modello GPT-4\n      messages: [\n        { role: 'user', content: prompt }, // Usa il prompt dinamico dell'utente\n      ],\n    });\n\n    // Estrai la risposta dal modello e restituiscila\n    const reply = completion.choices[0]?.message?.content?.trim() || 'Nessuna risposta ricevuta';\n    return reply;\n  } catch (error) {\n    console.error('Errore nell\\'accesso a OpenAI:', error);\n    throw new Error('Errore durante la generazione della risposta da OpenAI');\n  }\n}\n\n// Named export per POST\nexport async function POST(req: Request) {\n  try {\n    // Parsing del corpo della richiesta per ottenere il testo inviato dall'utente\n    const { text } = await req.json();\n\n    // Controlla se il testo è presente\n    if (!text) {\n      return NextResponse.json(\n        { error: 'Testo mancante nel corpo della richiesta' },\n        { status: 400 }\n      );\n    }\n\n    // Richiama la funzione per ottenere la risposta da OpenAI\n    const gptResponse = await fetchGPTResponse(text);\n\n    // Restituisci la risposta ottenuta da OpenAI come JSON\n    return NextResponse.json({ reply: gptResponse });\n  } catch (error) {\n    // Gestisci gli errori\n    console.error('Errore nel POST:', error);\n    return NextResponse.json(\n      { error: 'Errore interno del server' },\n      { status: 500 }\n    );\n  }\n}\n\n// Named export per GET (opzionale)\nexport async function GET() {\n  return NextResponse.json({ message: 'API GPT funzionante' });\n}\n"
+        }
+    ]
+}
